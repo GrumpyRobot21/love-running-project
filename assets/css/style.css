@@ -23,66 +23,94 @@ h2 {
 }
 
 #logo {
-    float:left;
-    font-size:280%;
+    float: left;
+    font-size: 280%;
 }
 
 #menu {
     font-size: 110%;
-    letter-spacing: 4px; 
+    letter-spacing: 4px;
 }
 
 #menu li {
     float: right;
     list-style-type: none;
     margin-right: 30px;
+}
+
+#logo,
+#menu {
+    line-height: 75px;
+}
+
+#menu a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#menu a:hover {
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.active {
+    border-bottom: 1px solid #3a3a3a;
+}
+
+/*Hero Image and cover text*/
+
+#hero-outer {
+    height: 600px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+}
+
+#cover-text,
+#cover-text h2 {
+    color: #fff;
+
+}
+
+#hero-image {
+    height: 600px;
+    width: 100%;
+    background: url('/images/hero-image.webp') no-repeat center center;
+    /* animates zoom effect on loading page*/
+    animation-name: hero-zoom;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+/* creates the level of zoom for hero image */
+
+@keyframes hero-zoom {
+    from {
+        transform: scale(1);
     }
 
-    #logo, #menu {
-        line-height: 75px;
+    to {
+        transform: scale(1.1);
     }
+}
 
-    #menu a {
-        text-decoration: none;
-        color: inherit;
-    }
+#cover-text {
+    font-size: 130%;
+    font-family: oswald, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
 
-    #menu a:hover {
-        border-bottom: 1px solid #3a3a3a;
-    }
+    width: 300px;
+    height: 200px;
 
-    .active {
-        border-bottom: 1px solid #3a3a3a;
-    }
+    padding-top: 40px;
+    padding-left: 10px;
 
-    /*Hero Image*/
+    /* using rgba values in order to be able to set opacity value as well - .7 last value for opacity*/
+    background-color: rgba(241, 109, 107, .7);
 
-    #hero-outer {
-        height: 600px; 
-        width: 100%;
-        overflow: hidden;
+    bottom: 30px;
+    right:150px;
 
-    }
-
-    #hero-image {
-        height: 600px; 
-        width: 100%;
-        background: url('/images/hero-image.webp') no-repeat center center; 
-        /* animates zoom effect on loading page*/
-        animation-name: hero-zoom;
-        animation-duration: 5s;
-        animation-fill-mode: forwards;
-    }
-
-    /* creates the level of zoom for hero image */
-
-    @keyframes hero-zoom {
-         from {
-            transform: scale(1);
-         }
-         to {
-            transform: scale(1.1);
-         }
-    }
-
-    
+    position: absolute;
+}
